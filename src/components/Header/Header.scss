@@ -1,0 +1,19 @@
+
+.app__header {
+  background: #2196F3;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.24);
+}
+
+.nav__list {
+  display: flex;
+}
+
+.nav__link {
+  display: block;
+  padding: 26px 23px;
+  transition: background-color .3s;
+
+  &:hover {
+    background-color: rgba(30, 136, 229, 1);
+  }
+}
