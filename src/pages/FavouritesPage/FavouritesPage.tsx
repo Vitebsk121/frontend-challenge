@@ -1,16 +1,16 @@
-import "./FavouritesPage.scss";
+import './FavouritesPage.scss';
 
-import React, {useEffect, useState} from "react";
-import CardsList from "../../components/CardsList/CardsList";
+import React, { useEffect, useState } from 'react';
+import CardsList from '../../components/CardsList/CardsList';
 
 type FavouritesProps = {};
 
 const FavouritesPage: React.FC<FavouritesProps> = (props: FavouritesProps) => {
-  const [cardData, setCardData] = useState<{url:string, id: string}[]>([]);
+  const [cardData, setCardData] = useState<{ url: string; id: string }[]>([]);
 
   useEffect(() => {
     const arrOfCards = [];
-    for(let i = 0; i < localStorage.length; i++) {
+    for (let i = 0; i < localStorage.length; i++) {
       let key = localStorage.key(i);
       if (!key) return;
       let card = {
@@ -20,15 +20,16 @@ const FavouritesPage: React.FC<FavouritesProps> = (props: FavouritesProps) => {
       arrOfCards.push(card);
     }
     setCardData(arrOfCards);
-  }, [])
+  }, []);
 
   return (
     <div className="content">
       <div className="wrapper">
-        {cardData.length === 0
-          ? (<h3 className='loader'>Добавьте котиков в избранное</h3>)
-          : (<CardsList cardData={cardData}/>)
-        }
+        {cardData.length === 0 ? (
+          <h3 className="loader">Добавьте котиков в избранное</h3>
+        ) : (
+          <CardsList cardData={cardData} />
+        )}
       </div>
     </div>
   );
