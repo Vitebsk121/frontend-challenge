@@ -1,9 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import './index.scss'
+import Header from "./components/Header/Header";
+import {BrowserRouter} from "react-router-dom";
+import AppRouter from "./router/AppRouter";
 
 const App = () => {
   return (
-    <h1>Hello Uchi.ru</h1>
+    <BrowserRouter>
+      <Header />
+      <AppRouter />
+    </BrowserRouter>
   )
 }
 
